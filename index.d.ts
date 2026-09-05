@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,10 +16,11 @@
 * limitations under the License.
 */
 
-#include "stdlib/stats/base/ndarray/svariance.h"
-#include "stdlib/stats/strided/svariance.h"
-#include "stdlib/ndarray/ctor.h"
-#include "stdlib/blas/base/shared.h"
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { float32ndarray, typedndarray } from '@stdlib/types/ndarray';
 
 /**
 * Computes the variance of a one-dimensional single-precision floating-point ndarray.
@@ -31,14 +32,24 @@
 *     -   a one-dimensional input ndarray.
 *     -   a zero-dimensional ndarray specifying the degrees of freedom adjustment.
 *
-* @param arrays    list containing ndarrays
-* @return          variance
+* @param arrays - array-like object containing ndarrays
+* @returns variance
+*
+* @example
+* var Float32Vector = require( '@stdlib/ndarray-vector-float32' );
+* var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
+*
+* var x = new Float32Vector( [ 1.0, -2.0, 2.0 ] );
+* var correction = scalar2ndarray( 1.0, {
+*     'dtype': 'float32'
+* });
+*
+* var v = svariance( [ x, correction ] );
+* // returns ~4.3333
 */
-float stdlib_stats_svariance( const struct ndarray *arrays[] ) {
-	const struct ndarray *x = arrays[ 0 ];
+declare function svariance( arrays: [ float32ndarray, typedndarray<number> ] ): number;
 
-	float correction;
-	stdlib_ndarray_get_float32( arrays[ 1 ], NULL, &correction );
 
-	return API_SUFFIX(stdlib_strided_svariance_ndarray)( stdlib_ndarray_dimension( x, 0 ), correction, (const float *)stdlib_ndarray_data( x ), stdlib_ndarray_stride_elements( x, 0 ), stdlib_ndarray_offset_elements( x ) );
-}
+// EXPORTS //
+
+export = svariance;
