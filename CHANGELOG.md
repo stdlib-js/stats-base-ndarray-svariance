@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-09-05)
+## Unreleased (2026-09-24)
 
 <section class="features">
 
@@ -23,6 +23,7 @@
 
 <details>
 
+-   [`ad74c25`](https://github.com/stdlib-js/stdlib/commit/ad74c2566f27422949c906bedf51c9936f5d62a8) - **docs:** update Markdown equation elements _(by stdlib-bot)_
 -   [`dea0762`](https://github.com/stdlib-js/stdlib/commit/dea0762477964611a8eff9d9895b0f4e083c2752) - **feat:** add C implementation for `stats/base/ndarray/svariance` [(#14618)](https://github.com/stdlib-js/stdlib/pull/14618) _(by JoyBoy, Athan Reines)_
 -   [`42bbbb1`](https://github.com/stdlib-js/stdlib/commit/42bbbb1d6cdbcd7a30f7f5f218c633bba02f0489) - **bench:** update require path _(by Athan Reines)_
 -   [`0318e6b`](https://github.com/stdlib-js/stdlib/commit/0318e6ba7b60a14cd2fe7576b878466bdc9dd1bf) - **chore:** modernize examples and benchmarks _(by Athan Reines)_
